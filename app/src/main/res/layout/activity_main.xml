@@ -4,8 +4,381 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_blue"
     tools:context=".MainActivity">
 
-    <!-- Место для верстки -->
+    <ImageView
+        android:id="@+id/backspace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="-40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backpeacture" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/goback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:clickable="true"
+        app:backgroundTint="@color/transp_black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_back"
+        app:tint="@color/white" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addinf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:clickable="true"
+        app:backgroundTint="@color/transp_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/addinfo"
+        app:tint="@color/white" />
+
+    <FrameLayout
+        android:id="@+id/cadre"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-79dp"
+        android:background="@drawable/rad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backspace">
+
+        <ImageView
+            android:id="@+id/dotasign"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/dotasign" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/sk_modern"
+        android:text="DoTA 2"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toEndOf="@+id/cadre"
+        app:layout_constraintTop_toTopOf="@+id/cadre" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:numStars="5"
+        android:progressTint="@color/yellow"
+        android:rating="5.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toEndOf="@+id/cadre"
+        app:layout_constraintTop_toBottomOf="@+id/appName" />
+
+    <TextView
+        android:id="@+id/viewsNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sk_modern"
+        android:text="70M"
+        android:textColor="@color/light_gray"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toEndOf="@+id/ratingBar"
+        app:layout_constraintTop_toTopOf="@+id/ratingBar" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cadre">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:isScrollContainer="true"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:isScrollContainer="true">
+
+                <TextView
+                    android:id="@+id/mobaTag"
+                    android:layout_width="53dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/item_tag"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="MOBA"
+                    android:textColor="@color/tagTV"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/multiplayerTag"
+                    android:layout_width="93dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/item_tag"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="MULTIPLAYER"
+                    android:textColor="@color/tagTV"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.073"
+                    app:layout_constraintStart_toEndOf="@+id/mobaTag"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/strategyTag"
+                    android:layout_width="73dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/item_tag"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="STRATEGY"
+                    android:textColor="@color/tagTV"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.124"
+                    app:layout_constraintStart_toEndOf="@+id/multiplayerTag"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23dp"
+                    android:fontFamily="@font/sk_modern"
+                    android:lineHeight="18dp"
+                    android:text="Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the &quot;Ancient&quot;, whilst defending their own."
+                    android:textColor="@color/light_gray"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/multiplayerTag" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/reviewAndRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/sk_modern"
+                    android:text="Review &amp; Ratings"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/bigRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sk_modern"
+                    android:gravity="center"
+                    android:text="4.9"
+                    android:textColor="@color/white"
+                    android:textSize="48sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/reviewAndRating" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar2"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:numStars="5"
+                    android:progressTint="@color/yellow"
+                    android:rating="4.9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.06"
+                    app:layout_constraintStart_toEndOf="@+id/bigRating"
+                    app:layout_constraintTop_toTopOf="@+id/bigRating" />
+
+                <TextView
+                    android:id="@+id/reviewsNumber"
+                    android:layout_width="72dp"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/sk_modern"
+                    android:gravity="center"
+                    android:lineHeight="14.6dp"
+                    android:text="69K Reviews"
+                    android:textColor="#A8ADB7"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/ratingBar2"
+                    app:layout_constraintTop_toBottomOf="@+id/ratingBar2" />
+
+                <View
+                    android:id="@+id/split"
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="24dp"
+                    android:background="#1A1F29"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bigRating" />
+
+                <ImageView
+                    android:id="@+id/photo1"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/split"
+                    app:srcCompat="@drawable/face1" />
+
+                <TextView
+                    android:id="@+id/user1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/sk_modern"
+                    android:gravity="center"
+                    android:lineHeight="19.2dp"
+                    android:text="Auguste Conte"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@+id/photo1"
+                    app:layout_constraintTop_toTopOf="@+id/photo1" />
+
+                <TextView
+                    android:id="@+id/userDate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/sk_modern"
+                    android:gravity="center"
+                    android:text="February 14, 2019"
+                    android:textColor="#66FFFFFF"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/user1"
+                    app:layout_constraintTop_toBottomOf="@+id/user1" />
+
+                <TextView
+                    android:id="@+id/comment1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/sk_modern"
+                    android:gravity="fill_horizontal"
+                    android:lineHeight="19dp"
+                    android:text="“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”"
+                    android:textColor="@color/light_gray"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/photo1" />
+
+                <ImageView
+                    android:id="@+id/photo2"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="22dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/comment1"
+                    app:srcCompat="@drawable/face2" />
+
+                <TextView
+                    android:id="@+id/name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="11dp"
+                    android:fontFamily="@font/sk_modern"
+                    android:gravity="center"
+                    android:lineHeight="18.9dp"
+                    android:text="Jang Marcelino"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/photo2"
+                    app:layout_constraintTop_toTopOf="@+id/photo2" />
+
+                <TextView
+                    android:id="@+id/userDate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/sk_modern"
+                    android:gravity="center"
+                    android:text="February 14, 2019"
+                    android:textColor="#66FFFFFF"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/name2"
+                    app:layout_constraintTop_toBottomOf="@+id/name2" />
+
+                <TextView
+                    android:id="@+id/comment2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:fontFamily="@font/sk_modern"
+                    android:gravity="fill_horizontal"
+                    android:lineHeight="19dp"
+                    android:text="“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”"
+                    android:textColor="@color/light_gray"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/photo2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/installButton"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="@color/yellow"
+                android:bottomLeftRadius="19dp"
+                android:bottomRightRadius="19dp"
+                android:lineHeight="20dp"
+                android:text="Install"
+                android:textAppearance="@style/Widget.Material3.Button"
+                android:textColor="#050B18"
+                android:textSize="19sp"
+                android:topLeftRadius="19dp"
+                android:topRightRadius="19dp"
+                app:fontFamily="@font/sk_modern"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/comment2" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
